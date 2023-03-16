@@ -58,7 +58,25 @@ public class ChristmasLetter {
         return wishList;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        ChristmasLetter that = (ChristmasLetter) o;
+
+        if (!getName().equals(that.getName())) return false;
+        if (!getAddress().equals(that.getAddress())) return false;
+        return getWishList().equals(that.getWishList());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName().hashCode();
+        result = 31 * result + getAddress().hashCode();
+        result = 31 * result + getWishList().hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {

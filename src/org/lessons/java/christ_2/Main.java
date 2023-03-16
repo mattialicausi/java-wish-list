@@ -21,6 +21,13 @@ public class Main {
 
         return conteggi;
     }
+
+    // funzione per rimuovere i duplicati dalla lista
+    public static Set<String> desideriUnici(List<String> desideri) {
+        Set<String> setDesideriUnici = new HashSet<>(desideri);
+        return setDesideriUnici;
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -57,6 +64,8 @@ public class Main {
         ChristmasLetter newWishList = new ChristmasLetter(name, address, wishList);
 
         System.out.println("Desiderio, numero di volte richiesto " + contaDesideri(wishList));
+
+        System.out.println("Rimuovi duplicati: " + desideriUnici(wishList));
 
         try {
             newWishList.send();
