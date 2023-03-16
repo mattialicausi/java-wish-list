@@ -28,9 +28,7 @@ public class Main {
 
                 System.out.println(wishList);
 
-                if (wishList.size() >= 5) {
-                    throw new Exception("Spiacente, puoi mandare massimo 5 desideri");
-                }
+
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
